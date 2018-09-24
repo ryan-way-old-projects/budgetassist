@@ -6,7 +6,6 @@ class UnsortedTransaction:
     amount = 0
     location = ""
 
-
     def __init__(self, date, amount, location):
         self.date = date
         self.amount = amount
