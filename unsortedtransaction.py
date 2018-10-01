@@ -1,7 +1,7 @@
 from datetime import datetime
 from datetime import date
 
-class UnsortedTransaction:
+class UnsortedTransaction(object):
     date = date.min
     amount = 0
     location = ""
