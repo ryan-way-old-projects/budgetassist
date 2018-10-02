@@ -12,7 +12,7 @@ def print_unsorted_transactions(csvmanager):
 
 def print_sorted_transactions(csvmanager):
     print("\nSorted Transactions:")
-    [print("%s, %s, %s" % (e.category, e.amount, e.location)) for e in csvmanager.sorted_transactions]
+    [print("%s, %s, %s" % (e.category.name, e.amount, e.location)) for e in csvmanager.sorted_transactions]
 
 
 def main():
@@ -25,8 +25,12 @@ def main():
         printcategories()
         print_unsorted_transactions(csvmanager)
         print_sorted_transactions(csvmanager)
-        category = Category(int(input()))
-        csvmanager.sort_transaction(category)
+        user_input = input()
+        if user_input == '-':
+            csvmanager.unsorted_transactions.remove(csvmanager.unsorted_transactions[0])
+        else:
+            category = Category(int(user_input))
+            csvmanager.sort_transaction(category)
     csvmanager.transactions_to_csvfile_out()
 
 

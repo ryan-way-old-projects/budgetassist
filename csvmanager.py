@@ -37,7 +37,7 @@ class CSVManager(object):
         file = open(self.csvfile_out, "w")
         for sorted_transaction in self.sorted_transactions:
             file.write(",%s,%s,%s,%s\n" %
-            (sorted_transaction.category,
+            (sorted_transaction.category.name,
             sorted_transaction.amount,
             sorted_transaction.location,
             sorted_transaction.date))
