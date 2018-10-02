@@ -36,7 +36,7 @@ class CSVManager(object):
     def transactions_to_csvfile_out(self):
         file = open(self.csvfile_out, "w")
         for sorted_transaction in self.sorted_transactions:
-            file.write(",%s,%s,%s,%s" %
+            file.write(",%s,%s,%s,%s\n" %
             (sorted_transaction.category,
             sorted_transaction.amount,
             sorted_transaction.location,
